@@ -1,0 +1,905 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+:root {
+    /* Paleta de colores */
+    --color-primario: #F4A301;
+    --color-secundario: #F6708E;
+    --color-perdido: #F24E3E;
+    --color-terciario: #C12842;
+    --color-blanco: #F6ECD9;
+    --color-extra: #3C2221;
+    --color-demas: #00A3E0;
+    --color-avanax: #4B0082;
+
+
+
+    /* Tipografias */
+    --Fuente-Titulos: 'Bungee', Sans-Serif;
+    --Fuente-Parrafos: 'Monserrat', Sans-Serif;
+    --Fuente-Textos: 'Inter', Sans-Serif;
+
+    /*Tamaños de la letra */
+    --Texto-Base: 45px;
+    --Texto-Nase: 40px;
+    --Texto-Case: 35px;
+
+    /* Peso de fuente*/
+    --Peso-Regular: 400;
+    --Peso-Light: 300;
+    --Peso-Suave: 50;
+
+    /* Espaciado de letras */
+    --espaciado-normal: 0;
+    --espaciado-prueba: 3px;
+}
+:root {
+    /* Paleta de colores */
+    --color-primario: #F4A301;
+    --color-secundario: #F6708E;
+    --color-perdido: #F24E3E;
+    --color-terciario: #C12842;
+    --color-blanco: #F6ECD9;
+    --color-extra: #3C2221;
+    --color-demas: #00A3E0;
+    --color-avanax: #4B0082;
+
+    /* Tipografias */
+    --Fuente-Titulos: 'Bungee', Sans-Serif;
+    --Fuente-Parrafos: 'Montserrat', Sans-Serif;
+    --Fuente-Textos: 'Inter', Sans-Serif;
+
+    /* Tamaños de la letra */
+    --Texto-Base: 45px;
+    --Texto-Nase: 40px;
+    --Texto-Case: 35px;
+
+    /* Peso de fuente */
+    --Peso-Regular: 400;
+    --Peso-Light: 300;
+    --Peso-Suave: 50;
+
+    /* Espaciado de letras */
+    --espaciado-normal: 0;
+    --espaciado-prueba: 3px;
+
+    /* Header */
+    --color-fondo-header: #F6708E; 
+    --color-boton-amarillo: #F4A301; 
+    --color-texto-enlaces: white;
+}
+
+
+body {
+    background-color: var(--color-blanco);
+    font-family: var(--Fuente-Textos);
+}
+
+main {
+    padding-top: 120px;
+}
+
+.main {
+    grid-area: main;
+    background-color: rgb(0, 255, 17);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: rgb(255, 247, 0);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+}
+
+
+/* Header */
+header {
+    width: 100%;
+    height: 90px;
+    background-color: var(--color-fondo-header); 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    z-index: 500;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo-nav {
+    width: 90px;
+    height: auto;
+}
+
+ul.main-menu {
+    display: flex;
+    gap: 40px;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+header li {
+    list-style: none;
+}
+
+header li a {
+    text-decoration: none;
+    color: var(--color-texto-enlaces); 
+    font-family: 'Inter', sans-serif;
+    font-weight: 550;
+    font-size: 1rem;
+    transition: color 0.3s; 
+}
+
+header li a:hover {
+    color: #ffd700; 
+}
+
+.botones-container {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.boton-educativo, .boton-descarga {
+    font-family: 'Inter', sans-serif;
+    font-weight: 550;
+    font-size: 1rem;
+    padding: 10px 25px; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: var(--color-boton-amarillo); 
+    color: white;
+}
+
+.boton-educativo:hover, .boton-descarga:hover {
+    background-color: #e4ba11; 
+}
+
+
+#menu-toggle-input {
+    display: none; 
+}
+
+.menu-toggle-label {
+    display: none; 
+    cursor: pointer;
+    padding: 10px;
+    z-index: 600;
+    position: relative;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto-enlaces);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-texto-enlaces);
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* Título principal */
+.titulo-mecanicas {
+    text-align: center;
+    font-size: var(--Texto-Base);
+    font-weight: 800;
+    color: var(--color-secundario);
+    font-family: var(--Fuente-Titulos);
+    margin-top: 40px;
+    line-height: 1.2;
+}
+
+/* Sección general */
+.seccion-mecanica {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
+}
+
+
+.mecanica-izquierda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.mecanica-derecha {
+    width: 500px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    font-family: var(--Fuente-Parrafos);
+    color: var(--color-extra);
+}
+
+
+.seccion-mecanica button {
+    padding: 12px 25px;
+    background: #ff6b47;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* SECCIÓN COMPLETA */
+.mecanica-seccion {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 400px;
+}
+
+
+.mecanica2-izquierda {
+    background-color: #F4A301;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+.mecanica2-izquierda p {
+    font-family: var(--Fuente-Parrafos);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-extra);
+    text-align: center;
+    line-height: 1.4;
+    max-width: 600px;
+}
+
+
+.mecanica2-derecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6ECD9;
+}
+
+
+
+.mecanica2-derecha button {
+    padding: 12px 25px;
+    background: #ff6b47;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mecanica2-derecha-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+/* TERCERA SECCIÓN: */
+.seccion-secreta {
+    width: 100%;
+    margin-top: 50px;
+    background-color: var(--color-blanco);
+}
+
+.secreta-contenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    height: 450px;
+    align-items: stretch;
+}
+
+
+.secreta-imagen-box {
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 40px;
+}
+
+.secreta-texto-box {
+    flex-grow: 1;
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.secreta-texto-box p {
+    font-family: var(--Fuente-Parrafos);
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--color-extra);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 450px;
+}
+
+
+.boton-secreto {
+    padding: 12px 25px;
+    background: #ff6b47;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/*  SEXTA SECCIÓN: */
+
+.seccion-jugador-tarjetas {
+    width: 100%;
+    padding: 60px 40px;
+    margin-top: 50px;
+    background-color: var(--color-blanco);
+}
+
+
+.titulo-tarjetas {
+    text-align: center;
+    font-family: var(--Fuente-Titulos);
+    font-size: var(--Texto-Base);
+    color: var(--color-primario);
+    margin-bottom: 40px;
+    letter-spacing: var(--espaciado-prueba);
+}
+
+.tarjetas-jugador-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.tarjeta-jugador {
+
+    width: 300px;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    background-color: #fcfcfc;
+    border: 5px solid var(--color-terciario);
+}
+
+
+.tarjeta-jugador.tarjeta-central {
+    border: 5px solid var(--color-demas);
+}
+
+.tarjeta-jugador img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 36px;
+}
+
+.info-tarjeta {
+    padding: 15px 10px;
+    background-color: #f7f0e4;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-tarjeta h4 {
+    font-family: var(--Fuente-Titulos);
+    font-size: 1.2rem;
+    color: var(--color-terciario);
+    margin: 0 0 5px 0;
+}
+
+.info-tarjeta p {
+    font-family: var(--Fuente-Parrafos);
+    font-size: 0.95rem;
+    color: var(--color-extra);
+    line-height: 1.3;
+}
+
+
+/*SEXTA SECCIÓN: TARJETAS */
+
+.seccion-jugador-tarjetas {
+    width: 100%;
+    padding: 60px 40px;
+    margin-top: 50px;
+    background-color: var(--color-blanco);
+}
+
+.titulo-tarjetas {
+    text-align: center;
+    font-family: var(--Fuente-Titulos);
+    font-size: var(--Texto-Base);
+    color: var(--color-primario);
+    margin-bottom: 40px;
+    letter-spacing: var(--espaciado-prueba);
+}
+
+.tarjetas-jugador-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.tarjeta-imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 36px;
+}
+
+/*SÉPTIMA SECCIÓN*/
+
+.seccion-interaccion {
+    width: 100%;
+    height: 600px;
+    margin-top: 50px;
+    position: relative;
+    background-color: #F24E3E;
+    background-image: url(IMG/Mecanicas/fondo.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.titulo-interaccion {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    font-family: var(--Fuente-Titulos);
+    font-size: var(--Texto-Nase);
+    color: var(--color-blanco);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    z-index: 2;
+}
+
+
+.interaccion-contenido {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interaccion-contenido img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+.tarjeta-hover {
+    position: relative;
+    width: 300px;
+    border-radius: 36px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.tarjeta-hover .tarjeta-imagen {
+    width: 100%;
+    height: auto;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+
+.tarjeta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tarjeta-overlay h3 {
+    font-family: var(--Fuente-Titulos);
+    font-size: 1.2rem;
+    color: var(--color-terciario);
+}
+
+.tarjeta-overlay p {
+    font-family: var(--Fuente-Parrafos);
+    font-size: 1.4rem;
+    color: var(--color-extra);
+}
+
+
+.tarjeta-hover:hover .tarjeta-imagen {
+    filter: brightness(0.35);
+    transform: scale(1.05);
+}
+
+.tarjeta-hover:hover .tarjeta-overlay {
+    opacity: 1;
+}
+
+
+footer {
+    grid-area: footer;
+    background: #F5E8D2;
+    padding: 45px 20px;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-top {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-logo {
+    width: 140px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.box4 {
+    background-color: #000;
+    width: 2px;
+    height: auto;
+}
+
+.footer-links span {
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: default;
+}
+
+.footer-divider {
+    width: 80%;
+    height: 1.5px;
+    background: #000;
+    margin: 5px auto;
+    opacity: 0.4;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-social {
+    margin: 20px;
+}
+
+.footer-social span img {
+    width: 22px;
+    margin: 0 8px;
+}
+
+
+@media (max-width: 600px) {
+
+    :root {
+        --Texto-Base: 32px;
+        --Texto-Nase: 30px;
+        --Texto-Case: 28px;
+    }
+
+
+    * {
+        overflow-x: hidden;
+    }
+
+   
+    header {
+        height: 70px;
+    }
+    
+    nav {
+        padding: 0 15px;
+    }
+
+    .logo-nav {
+        width: 60px;
+    }
+
+    .menu-toggle-label {
+        display: block;
+        order: 3;
+    }
+
+    ul.main-menu,
+    .botones-container {
+        display: none; 
+    }
+
+    ul.main-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column; 
+        background-color: var(--color-fondo-header); 
+        z-index: 550;
+        padding: 20px 0;
+        text-align: center;
+        gap: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    #menu-toggle-input:checked ~ ul.main-menu {
+        display: flex;
+    }
+
+    #menu-toggle-input:checked ~ .menu-toggle-label .hamburger {
+        background: transparent;
+    }
+
+    #menu-toggle-input:checked ~ .menu-toggle-label .hamburger::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    #menu-toggle-input:checked ~ .menu-toggle-label .hamburger::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+    
+    header li a {
+        font-size: 1.1rem;
+        display: block;
+        padding: 10px 0;
+    }
+
+    
+    main {
+        padding-top: 90px;
+    }
+
+   
+    .titulo-mecanicas {
+        font-size: var(--Texto-Base);
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+  
+    .seccion-mecanica {
+        flex-direction: column; 
+        gap: 30px;
+        padding: 20px 15px;
+        margin-top: 20px;
+    }
+
+    .mecanica-izquierda img {
+        max-width: 90%; 
+        height: auto;
+    }
+
+    .mecanica-derecha {
+        width: 100%; 
+        padding: 0 15px;
+        font-size: 18px;
+    }
+
+    
+    .mecanica-seccion {
+        grid-template-columns: 1fr; 
+        height: auto; 
+    }
+
+    .mecanica2-izquierda,
+    .mecanica2-derecha {
+        padding: 30px 20px;
+        min-height: 300px;
+    }
+
+    .mecanica2-izquierda p {
+        font-size: 20px;
+    }
+
+    .mecanica2-derecha-content img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    
+    .secreta-contenedor {
+        flex-direction: column; 
+        height: auto;
+    }
+
+    .secreta-imagen-box {
+        width: 100%;
+        max-width: none;
+        padding: 30px 20px;
+    }
+
+    .secreta-imagen-box img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .secreta-texto-box {
+        padding: 30px 20px;
+        min-height: 250px;
+    }
+
+    .secreta-texto-box p {
+        font-size: 20px;
+        max-width: none;
+    }
+
+    
+    .titulo-tarjetas {
+        font-size: var(--Texto-Base);
+        margin-bottom: 30px;
+    }
+
+    .tarjetas-jugador-contenedor {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+    }
+
+    .tarjeta-hover {
+        width: 85%; 
+        max-width: 350px; 
+    }
+
+    .tarjeta-overlay h3 {
+        font-size: 1.4rem;
+    }
+
+    .tarjeta-overlay p {
+        font-size: 1.1rem; 
+    }
+
+    
+    .seccion-interaccion {
+        height: 450px; 
+    }
+
+    .titulo-interaccion {
+        font-size: var(--Texto-Case);
+        top: 25px;
+        padding: 0 10px;
+    }
+
+    .interaccion-contenido img {
+        max-width: 80%; 
+    }
+
+
+    .footer-links {
+        flex-direction: column; 
+        gap: 15px;
+        margin-top: 0;
+    }
+
+    .box4 {
+        display: none;
+    }
+
+    .footer-links span {
+        padding: 5px 0;
+    }
+
+    .footer-logo {
+        width: 100px;
+        margin: 20px 0 10px;
+    }
+
+    .footer-social {
+        margin: 10px;
+    }
+
+    .footer-social span img {
+        width: 20px;
+        margin: 0 6px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+}

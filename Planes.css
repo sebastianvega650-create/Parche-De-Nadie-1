@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #8A63FF; /* Color base morado por si la imagen falla */
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+:root {
+    /* Paleta de colores */
+    --color-primario: #F4A301;
+    --color-secundario: #F6708E;
+    --color-perdido: #F24E3E;
+    --color-terciario: #C12842;
+    --color-blanco: #F6ECD9;
+    --color-extra: #3C2221;
+    --color-demas: #00A3E0;
+    --color-avanax: #4B0082;
+
+
+
+    /* Tipografias */
+    --Fuente-Titulos: 'Bungee', Sans-Serif;
+    --Fuente-Parrafos: 'Monserrat', Sans-Serif;
+    --Fuente-Textos: 'Inter', Sans-Serif;
+
+    /*Tamaños de la letra */
+    --Texto-Base: 45px;
+    --Texto-Nase: 40px;
+    --Texto-Case: 35px;
+
+    /* Peso de fuente*/
+    --Peso-Regular: 400;
+    --Peso-Light: 300;
+    --Peso-Suave: 50;
+
+    /* Espaciado de letras */
+    --espaciado-normal: 0;
+    --espaciado-prueba: 3px;
+}
+
+:root {
+    /* Paleta de colores */
+    --color-primario: #F4A301;
+    --color-secundario: #F6708E;
+    --color-perdido: #F24E3E;
+    --color-terciario: #C12842;
+    --color-blanco: #F6ECD9;
+    --color-extra: #3C2221;
+    --color-demas: #00A3E0;
+    --color-avanax: #4B0082;
+
+    /* Tipografias */
+    --Fuente-Titulos: 'Bungee', Sans-Serif;
+    --Fuente-Parrafos: 'Montserrat', Sans-Serif;
+    --Fuente-Textos: 'Inter', Sans-Serif;
+
+    /* Tamaños de la letra */
+    --Texto-Base: 45px;
+    --Texto-Nase: 40px;
+    --Texto-Case: 35px;
+
+    /* Peso de fuente */
+    --Peso-Regular: 400;
+    --Peso-Light: 300;
+    --Peso-Suave: 50;
+
+    /* Espaciado de letras */
+    --espaciado-normal: 0;
+    --espaciado-prueba: 3px;
+
+    /* Header */
+    --color-fondo-header: #F6708E;
+    --color-boton-amarillo: #F4A301;
+    --color-texto-enlaces: white;
+}
+
+
+.division {
+    background-color: white;
+    height: 15px;
+}
+
+:root {
+    /* Paleta de colores */
+    --color-primario: #f4a301;
+    --color-secundario: #f6708e;
+    --color-perdido: #f24e3e;
+    --color-terciario: #c12842;
+    --color-blanco: #f6ecd9;
+    --color-extra: #3c2221;
+    --color-demas: #00a3e0;
+    --color-avanax: #4b0082;
+
+    /* Tipografias */
+    --Fuente-Titulos: "Bungee", Sans-Serif;
+    --Fuente-Parrafos: "Monserrat", Sans-Serif;
+    --Fuente-Textos: "Inter", Sans-Serif;
+
+    /*Tamaños de la letra */
+    --Texto-Base: 45px;
+    --Texto-Nase: 40px;
+    --Texto-Case: 35px;
+
+    /* Peso de fuente*/
+    --Peso-Regular: 400;
+    --Peso-Light: 300;
+    --Peso-Suave: 50;
+
+    /* Espaciado de letras */
+    --espaciado-normal: 0;
+    --espaciado-prueba: 3px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 90px auto 1fr;
+    width: 100%;
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+}
+
+/* --- Header --- */
+:root {
+    --color-fondo-header: #f6708e;
+    --color-boton-amarillo: #f4a301;
+    --color-texto-enlaces: white;
+}
+
+header {
+    grid-area: header;
+    width: 100%;
+    background-color: var(--color-fondo-header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 500;
+}
+
+
+nav {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+nav img {
+    margin-right: 20px;
+}
+
+
+ul.main-menu {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+header li a {
+    text-decoration: none;
+    color: var(--color-texto-enlaces);
+    font-family: "Inter", sans-serif;
+    font-weight: 550;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header li a:hover {
+    color: #ffd700;
+}
+
+header li {
+    list-style: none;
+}
+
+
+.botones-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.boton-educativo,
+.boton-descarga {
+    font-family: "Inter", sans-serif;
+    font-weight: 550;
+    font-size: 1rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: var(--color-boton-amarillo);
+    color: white;
+}
+
+.boton-educativo:hover,
+.boton-descarga:hover {
+    background-color: #e4ba11;
+}
+
+
+#menu-toggle-input {
+    display: none;
+}
+
+.menu-toggle-label {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 600;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto-enlaces);
+    position: relative;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-texto-enlaces);
+    transition: transform 0.3s, top 0.3s, bottom 0.3s;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* FIN HEADER */
+
+/* --- SECCIÓN PRINCIPAL --- */
+.seccion-planes {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('IMG/Planes/Group 23.png');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: var(--Fuente-Titulos);
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pdn {
+    color: var(--color-secundario);
+}
+
+h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* --- TARJETAS DE PLANES --- */
+.primeros {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.plan-card {
+    background-color: #62D4FF;
+    width: 320px;
+    min-height: 500px;
+    border-radius: 15px 15px 0 0;
+    padding: 30px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+}
+
+
+.gratis::after { background-color: var(--color-primario); }
+.institucion::after { background-color: #F24E3E; }
+.aula-pro::after { background-color: #3C1B5D; }
+
+.card-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.price-title {
+    font-family: var(--Fuente-Titulos);
+    font-size: 2.2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.card-desc {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.features li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.check {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.btn-adquirir {
+    display: block;
+    text-align: center;
+    background-color: #F6708E;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* --- SECCIÓN EXTRA --- */
+.segundo {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-añadido {
+    font-family: var(--Fuente-Titulos);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.extra-card {
+    background-color: #62D4FF;
+    width: 80%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* footer */
+
+footer {
+    grid-area: footer;
+    background: #f5e8d2;
+    padding: 45px 20px;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-top {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-logo {
+    width: 140px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.box4 {
+    background-color: #000;
+    width: 2px;
+    height: auto;
+}
+
+.footer-links span {
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: default;
+}
+
+.footer-divider {
+    width: 80%;
+    height: 1.5px;
+    background: #000;
+    margin: 5px auto;
+    opacity: 0.4;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-social {
+    margin: 20px;
+}
+
+.footer-social span img {
+    width: 22px;
+    margin: 0 8px;
+}
